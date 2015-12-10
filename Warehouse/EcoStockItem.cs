@@ -25,7 +25,8 @@ namespace Warehouse
                     throw new Exception("Wrong Value");
             }
         }
-        public EcoStockItem(int id, string name, string mark) : base(id, name)
+
+        protected EcoStockItem(int id, string name, int stockCount, string mark) : base(id, name, stockCount)
         {
             Mark = mark;
         }

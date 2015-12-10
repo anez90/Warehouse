@@ -9,6 +9,7 @@ namespace Warehouse
     class Stock
     {
         StockItem[] stockItems;
+        
 
         public StockItem this[int index]
         {
@@ -20,6 +21,10 @@ namespace Warehouse
             {
                 stockItems[index] = value;
             }
+        }
+        public int StockItemsLength
+        {
+            get { return stockItems.Length; }
         }
 
         public Stock()
@@ -51,27 +56,5 @@ namespace Warehouse
         }
 
     }
-    class Uczniowie
-    {
-        string[] grupa;
-        public Uczniowie(int iloscDzieciWGrupie)
-        {
-            grupa = new string[iloscDzieciWGrupie];
-        }
-        public string this[int index]
-        {
-            get { return grupa[index]; }
-            set
-            {
-                grupa[index] = value;
-            }
-        }
-        public void WyswietlDzieciZGrupy()
-        {
-            foreach (string x in grupa)
-            {
-                Console.WriteLine(x);
-            }
-        }
-    }
+    
 }

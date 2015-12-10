@@ -25,7 +25,7 @@ namespace Warehouse
                     throw new Exception("Wrong value");
             }
         }
-        public Juice(int id, string name, string mark, string type) : base(id, name, mark)
+        public Juice(int id, string name, int stockCount, string mark, string type) : base(id, name, stockCount, mark)
         {
             Type = type;
         }

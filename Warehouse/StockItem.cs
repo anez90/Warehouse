@@ -10,7 +10,7 @@ namespace Warehouse
     {
         int id;
         string name;
-        static int stockCount;
+        int stockCount;
 
         public int Id
         {
@@ -36,34 +36,28 @@ namespace Warehouse
                 name = value;
             }
         }
-        public static int StockCount
+        public int StockCount
         {
             get
             {
                 return stockCount;
             }
 
-            private set
+            set
             {
                 stockCount = value;
             }
         }
 
-        static StockItem()
-        {
-            stockCount = 0;
-        }
-        public StockItem()
-        {
-            StockCount++;
-        }
-        public StockItem(int id, string name) : this()
+
+        protected StockItem(int id, string name, int stockCount)
         {
             Id = id;
             Name = name;
+            StockCount = stockCount;
         }
 
-        public override string ToString() => $"Id: {Id}, Name: {Name}";
+        public override string ToString() => $"Id: {Id}, Name: {Name}, StockCout: {StockCount}";
 
 
 

@@ -24,7 +24,7 @@ namespace Warehouse
                     throw new Exception("Wrong value");
             }
         }
-        public Plate(int id, string name, string type) : base(id, name)
+        public Plate(int id, string name, int stockCount, string type) : base(id, name, stockCount)
         {
             Type = type;
         }
