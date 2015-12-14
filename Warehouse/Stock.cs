@@ -22,16 +22,16 @@ namespace Warehouse
                 stockItems[index] = value;
             }
         }
-        public int StockItemsLength
-        {
-            get { return stockItems.Length; }
-        }
-
+       
         public Stock()
         {
             stockItems = new StockItem[0];
         }
 
+        public int StockItemsLength
+        {
+            get { return stockItems.Length; }
+        }
         public void AddItem(StockItem item)
         {
             StockItem[] newStock = new StockItem[stockItems.Length + 1];

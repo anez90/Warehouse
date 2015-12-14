@@ -21,6 +21,7 @@ namespace Warehouse
 
             set
             {
+                if(value > 0)
                 id = value;
             }
         }
@@ -45,10 +46,10 @@ namespace Warehouse
 
             set
             {
+                if(value > 0)
                 stockCount = value;
             }
         }
-
 
         protected StockItem(int id, string name, int stockCount)
         {

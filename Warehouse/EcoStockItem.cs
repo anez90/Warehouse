@@ -19,7 +19,7 @@ namespace Warehouse
 
             set
             {
-                if (value == "Krav" || value == "EG")//ändra till små/stora
+                if (value == "Krav" || value == "EG" || value == "krav" || value == "eg")//ändra till små/stora
                     mark = value;
                 else
                     throw new Exception("Wrong Value");
@@ -30,6 +30,7 @@ namespace Warehouse
         {
             Mark = mark;
         }
+
         public override string ToString() => $" {base.ToString()}, Mark: {Mark}";
 
     }

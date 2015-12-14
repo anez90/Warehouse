@@ -12,6 +12,7 @@ namespace Warehouse
         static void Main(string[] args)
         {
             Stock stock = new Stock();
+
             bool loop = true;
             while (loop)
             {
@@ -20,7 +21,17 @@ namespace Warehouse
                 switch (choice)
                 {
                     case 1:
-                        CreateProduct(stock);
+                        CreateProduct();
+                        int choiceProduct = int.Parse(Console.ReadLine());
+                        switch (choiceProduct)
+                        {
+                            case 1:
+                                CreateJuice(stock);
+                                break;
+                            case 2:
+                                CreatePlate(stock);
+                                break;
+                        }
                         break;
                     case 2:
                         Console.WriteLine("Enter ID:");
@@ -59,28 +70,13 @@ namespace Warehouse
             Console.WriteLine("[3] List products");
             Console.WriteLine("[4] Exit");
         }
-
-        private static void CreateProduct(Stock stock)
+        private static void CreateProduct()
         {
             Console.WriteLine("What kind of product do you want to create?");
             Console.WriteLine("[1] Juice");
             Console.WriteLine("[2] Plate");
             Console.WriteLine("[3] Go back");
-            int choiceProduct = int.Parse(Console.ReadLine());
-            switch (choiceProduct)
-            {
-                case 1:
-                    CreateJuice(stock);
-                    break;
-                case 2:
-                    CreatePlate(stock);
-                    break;
-                default:
-                    break;
-            }
-
         }
-
         private static void CreatePlate(Stock stock)
         {
             Console.WriteLine("Enter ID:");
